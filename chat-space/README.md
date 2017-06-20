@@ -6,9 +6,8 @@
 |:-----------------|:-------------|:-----------------------------------------|
 | name             | string       | index: true, null: false, unique: true   |
 ### Association
-* has_many :groups, :through :members
+* has_many :groups, :through :groups_users
 * has_many :messages
-* belongs_to :member
 ***
 ### groups table
 | column           | Type         | Options                                  |
@@ -16,18 +15,17 @@
 | name             | string       | null: false, null: false                 |
 | message_id       | references   | null: false, foreign_key: true           |
 ### Association
-* has_many :users, :through :members
+* has_many :users, :through :groups_users
 * has_many :messages
-* belongs_to :member
 ***
-### members table
+### groups_users table
 | column           | Type         | Options                                  |
 |:----------------:|:------------:|:----------------------------------------:|
 | user_id          | references   | null: false, foreign_key: true           |
 | group_id         | references   | null: false, foreign_key: true           |
 ### Association
-* has_many :users
-* has_many :groups
+* belongs_to :users
+* belongs_to :groups
 ***
 ### messages table
 | column           | Type         | Options                                  |
