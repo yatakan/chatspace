@@ -1,5 +1,3 @@
-== README
-
 # DB設計
 ***
 ## tables
@@ -39,5 +37,3 @@
 ### Association
 *belongs_to :user
 *belongs_to :group
-
-<tt>rake doc:app</tt>.
