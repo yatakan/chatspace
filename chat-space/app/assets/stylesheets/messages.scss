@@ -19,14 +19,14 @@
       }
       .awesome-icon {
         float: right;
-      p {
-        float: left;
-        padding-left: 5px;
+        p {
+          float: left;
+          padding-left: 5px;
+          }
+        a {
+          text-decoration: none;
+          color: $color-white;
         }
-      a {
-        text-decoration: none;
-        color: $color-white;
-      }
       }
     }
     .left__bottom {
@@ -69,11 +69,11 @@
           color: $background-blue;
           height: 40px;
           margin-top: 28px;
-            p {
-              font-size: 12px;
-              padding: 0 20px;
-              line-height: 40px;
-            }
+          p {
+            font-size: 12px;
+            padding: 0 20px;
+            line-height: 40px;
+          }
         }
         .header__member {
           font-size: 12px;
