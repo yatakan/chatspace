@@ -2,28 +2,7 @@
   %p お知らせです
 
 .content
-  .content__left
-    .left__header
-      %p chosen-one
-      .awesome-icon
-        %p= link_to '',messages_path,class:"fa fa-pencil-square-o"
-        %p= link_to '',messages_path,class:"fa fa-cog"
-    .left__bottom
-      .group
-        .group__name
-          グループ名
-        .group__message
-          最後の発言
-      .group
-        .group__name
-          グループ名
-        .group__message
-          最後の発言
-      .group
-        .group__name
-          グループ名
-        .group__message
-          最後の発言
+  = render partial: 'sidebar'
   .content__right
     .right__header
       %h1 グループ名
