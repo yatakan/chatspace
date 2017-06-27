@@ -29,11 +29,11 @@
         %p 発言
   .right__footer
     .text-box
-      %input{:placeholder => "type a message", :type => "text"}/
+      %input{:class => "text", :placeholder => "type a message", :type => "text"}/
       .picture-button
         %form
           %label
             %p #{fa_icon "picture-o"}
-            %input{:class => "file-uplode",:type => "file"}/
+            %input{:class => "file-uplode",:type => "file", :accept =>"image/*"}/
     .send-button
-      %p Send
+      %input{:type => "submit",:value => "Send"}

@@ -150,7 +150,9 @@
         background-color: $background-blue;
         height: 50px;
         margin: 20px 40px 20px 15px;
-        p {
+        input {
+          border-style: none;
+          background-color: $background-blue;
           line-height: 50px;
           padding: 0 20px;
           color: $color-white;
