@@ -1,0 +1,39 @@
+.content__right
+  .right__header
+    %h1 グループ名
+    .header__box
+      %p Edit
+    .header__member
+      %p Member :
+      %ul
+        %li chosen-one
+        %li chosen-one
+  .right__middle
+    .message
+      .message__top
+        %h1 発言者の名前
+        %p.date 2017/10/01 13:59
+      .message__bottom
+        %p 発言
+    .message
+      .message__top
+        %h1 発言者の名前
+        %p.date 2017/10/01 13:59
+      .message__bottom
+        %p 発言
+    .message
+      .message__top
+        %h1 発言者の名前
+        %p.date 2017/10/01 13:59
+      .message__bottom
+        %p 発言
+  .right__footer
+    .text-box
+      %input.text{placeholder:"type a message", type:"text"}
+      .picture-button
+        %form
+          %label
+            %p #{fa_icon "picture-o"}
+            %input.file-uplode{type:"file", accept:"image/*"}
+    .send-button
+      %input{type:"submit",value:"Send"}
