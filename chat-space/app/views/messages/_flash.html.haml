@@ -1,2 +1,2 @@
-.notice
-  %p お知らせです
+- flash.each do|key, value|
+  = content_tag :p, value, class: key
