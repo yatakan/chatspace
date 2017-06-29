@@ -1,2 +1,6 @@
-.notice
-  %p お知らせです
+-if(flash[:notice])
+  .notice
+    %p #{flash[:notice]}
+-if(flash[:alert])
+  .alert
+    %p #{flash[:alert]}
