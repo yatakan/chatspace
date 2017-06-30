@@ -2,7 +2,8 @@
   .right__header
     %h1 グループ名
     .header__box
-      %p Edit
+      %p= link_to 'Edit',edit_group_path(1),class:"edit-button"
+      //仮ID
     .header__member
       %p Member :
       %ul
