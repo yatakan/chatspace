@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 チャットグループ編集
-  =form_for @group, url: group_path , class:"edit_chat_group" do |f|
+  =form_for @group, class:"edit_chat_group" do |f|
     -if @group.errors.any?
       .chat-group-form__errors
         -@group.errors.full_messages.each do |message|

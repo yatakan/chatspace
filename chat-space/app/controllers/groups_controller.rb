@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(create_params)
+    @group = Group.new(create_or_update_params)
     if @group.save
       redirect_to messages_path, notice: "グループが作成されました"
     else
@@ -17,12 +17,12 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
+    find_group
   end
 
   def update
-    @group = Group.find(params[:id])
-    if @group.update(create_params)
+    find_group
+    if @group.update(create_or_update_params)
       redirect_to messages_path, notice: "グループが編集されました"
     else
       render :edit
@@ -31,7 +31,11 @@ class GroupsController < ApplicationController
 
   private
 
-  def create_params
+  def create_or_update_params
     params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def find_group
+    @group = Group.find(params[:id])
   end
 end
