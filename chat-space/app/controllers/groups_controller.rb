@@ -4,9 +4,9 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(create_permit)
+    @group = Group.new(create_params)
     if @group.save
-      redirect_to messages_path,notice: "グループが作成されました"
+      redirect_to messages_path, notice: "グループが作成されました"
     else
       render :new
     end
@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
 
   private
 
-  def create_permit
+  def create_params
     params.require(:group).permit(:name, user_ids: [])
   end
 end

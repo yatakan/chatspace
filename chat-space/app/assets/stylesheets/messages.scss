@@ -19,11 +19,10 @@
       }
       .awesome-icon {
         float: right;
-        p {
+        margin: 42px 0;
+        a {
           float: left;
           padding-left: 5px;
-          }
-        a {
           text-decoration: none;
           color: $color-white;
         }
@@ -64,19 +63,16 @@
         .header__box {
           display: inline-block;
           float: right;
-          line-height: 100px;
           border: solid 1px;
           color: $background-blue;
           height: 40px;
           margin-top: 28px;
-          p {
-            font-size: 12px;
-            padding: 0 20px;
-            line-height: 40px;
-          }
           a {
+            font-size: 12px;
+            padding: 11px 20px;
             text-decoration: none;
             color: $background-blue;
+            display: block;
           }
         }
         .header__member {
