@@ -9,9 +9,8 @@ class GroupsController < ApplicationController
       flash[:notice] = "グループが作成されました。"
       redirect_to messages_path
     else
-      render 'new'
+      render action: :new
     end
-    # reirect と renderのちがい
   end
 
   def edit
