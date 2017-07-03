@@ -1,13 +1,13 @@
 .content__right
   .right__header
-    %h1 グループ名
+    %h1= @group.name
     .header__box
       = link_to 'Edit', edit_group_path(@group), class:"edit-button"
     .header__member
       %p Member :
       %ul
-        %li chosen-one
-        %li chosen-one
+        - @users.each do |user|
+          %li= user.name
   .right__middle
     -@messages.each do |message|
       .message
