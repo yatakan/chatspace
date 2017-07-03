@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
+  before_action :current_user_groups, only: [:index, :create]
   def index
-    @groups = current_user.groups
-    @group = Group.find(params[:group_id])
+    current_user_groups
     @message = Message.new
   end
 
@@ -10,12 +10,18 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(params[:group_id])
     else
-      redirect_to group_messages_path(params[:group_id]), alert: "テキストが入力されていません"
+      flash[:alert] = "テキストが入力されていません"
+      render :index
     end
   end
 
   private
   def create_params
     params.require(:message).permit(:text, :image).merge(group_id: params[:group_id], user_id: current_user.id)
+  end
+
+  def current_user_groups
+    @group = Group.find(params[:group_id])
+    @groups = current_user.groups
   end
 end
