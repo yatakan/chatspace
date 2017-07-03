@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   before_action :current_user_groups, only: [:index, :create]
   def index
-    current_user_groups
     @message = Message.new
   end
 
