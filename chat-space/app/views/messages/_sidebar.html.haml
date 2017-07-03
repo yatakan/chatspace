@@ -5,18 +5,9 @@
       = link_to '', new_group_path, class:"fa fa-pencil-square-o"
       = link_to '', edit_user_path(current_user), class:"fa fa-cog"
   .left__bottom
-    .group
-      .group__name
-        グループ名
-      .group__message
-        最後の発言
-    .group
-      .group__name
-        グループ名
-      .group__message
-        最後の発言
-    .group
-      .group__name
-        グループ名
-      .group__message
-        最後の発言
+    - @groups.each do |group|
+      .group
+        .group__name
+          = group.name
+        .group__message
+          %p メッセージはまだない
