@@ -34,7 +34,8 @@
       height: 100%;
       .group {
         padding: 20px 20px;
-        &__name {
+        &__name a{
+          text-decoration: none;
           font-size: 15px;
           color: $color-white;
           padding-bottom: 5px
@@ -120,28 +121,26 @@
       .text-box {
         margin: 20px 0 20px 40px;
         float: left;
-        font-size: 16px;
-        color: $font-color-chat;
         background-color: $color-white;
-        width: calc(100% - 176px);
+        width: calc(100% - 175px);
         height: 50px;
         input {
           float: left;
-          padding-left: 10px;
           border: solid 1px $color-white;
           height: 48px;
-          width: calc(100% - 40px);
+          width: calc(100% - 45px);
+          font-size: 16px;
+          color: $font-color-chat;
+          padding-left: 10px;
         }
         .picture-button {
-          float: right;
-          line-height: 50px;
-          background-color: $color-white;
-          label {
-            float:right;
-            padding-right: 10px;
-          }
-          .file-uplode {
+          .pic-button {
             display: none;
+          }
+          p {
+            float: right;
+            line-height: 50px;
+            padding-right: 10px;
           }
         }
       }
@@ -149,13 +148,20 @@
         float: right;
         background-color: $background-blue;
         height: 50px;
+        width: 80px;
+        border-style: none;
+        background-color: $background-blue;
+        color: $color-white;
         margin: 20px 40px 20px 15px;
-        input {
+        font-size: 16px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+        input{
+          font-size: 18px;
           border-style: none;
+          color: white;
           background-color: $background-blue;
-          line-height: 50px;
-          padding: 0 20px;
-          color: $color-white;
         }
       }
     }
