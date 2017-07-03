@@ -16,6 +16,7 @@
           %p.date= message.created_at
         .message__bottom
           %p= message.text
+          = image_tag "#{message.image}"
   .right__footer
     =form_for [@group,@message] do |f|
       .text-box
