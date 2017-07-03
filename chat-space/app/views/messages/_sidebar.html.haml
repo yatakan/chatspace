@@ -8,6 +8,6 @@
     - @groups.each do |group|
       .group
         .group__name
-          = group.name
+          = link_to group.name,group_messages_path(group)
         .group__message
           %p メッセージはまだない
