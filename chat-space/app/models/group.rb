@@ -4,9 +4,6 @@ class Group < ApplicationRecord
   has_many :messages
 
   def last_message_search
-    @messages = self.messages
-    @last_message = @messages.last
-    @text = @last_message.text
-    return @text
+    messages.last.text
   end
 end
