@@ -1,6 +1,6 @@
 .content__left
   .left__header
-    %p chosen-one
+    %p= current_user.name
     .awesome-icon
       = link_to '', new_group_path, class:"fa fa-pencil-square-o"
       = link_to '', edit_user_path(current_user), class:"fa fa-cog"
