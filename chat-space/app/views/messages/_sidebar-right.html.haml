@@ -28,7 +28,7 @@
       .message__bottom
         %p 発言
   .right__footer
-    =form_for [@group,@message], url: { controller: "messages", action: "create" } do |f|
+    =form_for [@group,@message] do |f|
       .text-box
         =f.text_field :text, placeholder:"type a message"
         .picture-button
