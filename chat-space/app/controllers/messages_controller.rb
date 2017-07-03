@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(params[:group_id])
     else
-      flash[:alert] = "テキストが入力されていません"
+      flash.now[:alert] = "テキストが入力されていません"
       render :index
     end
   end
