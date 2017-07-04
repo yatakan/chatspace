@@ -1,32 +1,22 @@
 .content__right
   .right__header
-    %h1 グループ名
+    %h1= @group.name
     .header__box
       = link_to 'Edit', edit_group_path(@group), class:"edit-button"
     .header__member
       %p Member :
       %ul
-        %li chosen-one
-        %li chosen-one
+        - @group.users.each do |user|
+          %li= user.name
   .right__middle
-    .message
-      .message__top
-        %h1 発言者の名前
-        %p.date 2017/10/01 13:59
-      .message__bottom
-        %p 発言
-    .message
-      .message__top
-        %h1 発言者の名前
-        %p.date 2017/10/01 13:59
-      .message__bottom
-        %p 発言
-    .message
-      .message__top
-        %h1 発言者の名前
-        %p.date 2017/10/01 13:59
-      .message__bottom
-        %p 発言
+    -@messages.each do |message|
+      .message
+        .message__top
+          %h1= message.user.name
+          %p.date= message.created_at
+        .message__bottom
+          %p= message.text
+          = image_tag "#{message.image}"
   .right__footer
     =form_for [@group,@message] do |f|
       .text-box

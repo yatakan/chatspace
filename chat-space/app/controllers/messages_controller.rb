@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(params[:group_id])
     else
-      flash[:alert] = "テキストが入力されていません"
+      flash.now[:alert] = "テキストが入力されていません"
       render :index
     end
   end
@@ -21,6 +21,7 @@ class MessagesController < ApplicationController
 
   def current_user_groups
     @group = Group.find(params[:group_id])
-    @groups = current_user.groups
+    @groups = current_user.groups.includes([:messages,:users])
+    @messages = @group.messages.includes(:user)
   end
 end
