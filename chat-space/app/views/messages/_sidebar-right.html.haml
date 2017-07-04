@@ -6,7 +6,7 @@
     .header__member
       %p Member :
       %ul
-        - @users.each do |user|
+        - @group.users.each do |user|
           %li= user.name
   .right__middle
     -@messages.each do |message|
