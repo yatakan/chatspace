@@ -13,7 +13,7 @@
 ### groups table
 | column           | Type         | Options                                  |
 |:----------------:|:------------:|:----------------------------------------:|
-| name             | string       | null: false, null: false                 |
+| name             | string       | null: false                              |
 ### Association
 * has_many :groups_users
 * has_many :users, :through :groups_users
@@ -31,7 +31,7 @@
 ### messages table
 | column           | Type         | Options                                  |
 |:----------------:|:------------:|:----------------------------------------:|
-| text             | text         | null: false                              |
+| text             | text         |                                          |
 | user_id          | references   | null: false, foreign_key: true           |
 | group_id         | references   | null: false, foreign_key: true           |
 ### Association
