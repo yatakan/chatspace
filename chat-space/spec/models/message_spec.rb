@@ -3,6 +3,8 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     let(:message) { build(:message) }
+    let(:group) { create(:group) }
+    let(:user) { create(:user) }
     let(:image_path) { File.join(Rails.root, 'spec/images/test.jpg') }
     let(:image) { Rack::Test::UploadedFile.new(image_path) }
 
