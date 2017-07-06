@@ -3,24 +3,18 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     let(:message) { build(:message) }
-    let(:group) { create(:group) }
-    let(:user) { create(:user) }
     let(:image_path) { File.join(Rails.root, 'spec/images/test.jpg') }
     let(:image) { Rack::Test::UploadedFile.new(image_path) }
 
     it "is valid with text?" do
-      message[:text] = "こんにちは"
       expect(message).to be_valid
     end
 
     it "is valid with image?" do
-      message[:image] = image
       expect(message).to be_valid
     end
 
     it "is valid with text and image?" do
-      message[:text] = "こんにちは"
-      message[:image] = image
       expect(message).to be_valid
     end
 
