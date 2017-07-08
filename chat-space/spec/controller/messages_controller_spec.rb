@@ -23,7 +23,7 @@ describe MessagesController, type: :controller do
         expect(assigns(:group)).to eq(group)
       end
 
-      it "is assigns @messages has current_group.users" do
+      it "is assigns pl @messages has current_group.users" do
         messages = create_list(:message, 3, user_id: user.id, group_id: group.id)
         get :index, params: { group_id: group }
         expect(assigns(:messages)).to match(messages)
