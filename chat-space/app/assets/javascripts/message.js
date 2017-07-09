@@ -16,7 +16,7 @@ $(document).on('ready page:load' , function() {
   }
   function buildHTMLbottom(data){
     var bottom_html = ""
-    if(data.text.length !== 0){
+    if(data.text){
       var data_text = data.text;
       var text_html =
       `<div class="message__bottom">
@@ -26,9 +26,8 @@ $(document).on('ready page:load' , function() {
       </div>`
       bottom_html += text_html;
     }
-    if(JSON.stringify(data.image) !== null) {
+    if(data.image.url) {
       var image_html = `<image src="${data.image.url}">`
-      console.log(JSON.stringify(data.image));
       bottom_html += image_html
     }
     return bottom_html
@@ -52,9 +51,11 @@ $(document).on('ready page:load' , function() {
       $('.message:last-child').append(bottom_html);
       $('#message_text').val('');
       $('.pic-button').val('');
+      var position = $('.right__middle').find($(".message:last-child")).get(0).offsetTop
+      $(".right__middle").not(":animated").animate({scrollTop:position});
     })
     .fail(function(){
-      alert('error');
+      window.alert('テキストが入力されていません');
     })
     return false;
   });
