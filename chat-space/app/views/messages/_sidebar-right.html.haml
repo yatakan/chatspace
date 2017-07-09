@@ -13,7 +13,7 @@
       .message
         .message__top
           %h1= message.user.name
-          %p.date= message.created_at
+          %p.date= message.date_time
         .message__bottom
           %p= message.text
           = image_tag "#{message.image}"
