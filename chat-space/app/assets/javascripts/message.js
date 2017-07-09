@@ -1,5 +1,4 @@
 $(document).on('ready page:load' , function() {
-  console.log("ss");
   function buildHTMLtop(data){
     var html =
       `<div class="message">
