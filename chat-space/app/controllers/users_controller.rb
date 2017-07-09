@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(params_edit) if user.id == current_user.id
+    redirect_to groups_path, notice: "ユーザーが編集されました。"
   end
 
   private
