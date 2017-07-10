@@ -4,4 +4,9 @@ class Message < ApplicationRecord
   validates :text, presence: true, unless:"image?"
   validates :group_id, :user_id, presence: true
   mount_uploader :image, ImageUploader
+
+  def date_time
+    date_time = created_at.strftime("%Y/%m/%d %H:%M")
+    return date_time
+  end
 end

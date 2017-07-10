@@ -13,17 +13,17 @@
       .message
         .message__top
           %h1= message.user.name
-          %p.date= message.created_at
+          %p.date= message.date_time
         .message__bottom
           %p= message.text
           = image_tag "#{message.image}"
   .right__footer
     =form_for [@group,@message] do |f|
       .text-box
-        =f.text_field :text, placeholder:"type a message"
+        =f.text_field :text, placeholder:"type a message", autofocus:"true"
         .picture-button
           =f.label :image do
-            =f.file_field :image,class:"pic-button"
+            =f.file_field :image,class:"pic-button", accept: 'image/jpg,image/jpeg,image/png,image/gif'
             %p #{fa_icon "picture-o"}
       .send-button
         =f.submit "Send"
