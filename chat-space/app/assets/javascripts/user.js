@@ -1,4 +1,4 @@
-$(document).on ('turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
   var word
 
   function appendUsers(user) {
