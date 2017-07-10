@@ -23,7 +23,7 @@
         =f.text_field :text, placeholder:"type a message", autofocus:"true"
         .picture-button
           =f.label :image do
-            =f.file_field :image,class:"pic-button"
+            =f.file_field :image,class:"pic-button", accept: 'image/jpg,image/jpeg,image/png,image/gif'
             %p #{fa_icon "picture-o"}
       .send-button
         =f.submit "Send"

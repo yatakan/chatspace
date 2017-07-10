@@ -1,35 +1,35 @@
-$(document).on('ready page:load' , function() {
-  function buildHTMLtop(data){
+$(function(){
+  function buildHTML(data){
     var html =
-      `<div class="message">
-        <div class="message__top">
+      `<div class="message__top">
           <h1>
             ${data.user_name}
           </h1>
           <p class="date">
             ${data.date}
           </p>
-        </div>
-      </div>`
-      return html;
-  }
-  function buildHTMLbottom(data){
+        </div>`
     var bottom_html = ""
     if(data.text){
-      var data_text = data.text;
       var text_html =
       `<div class="message__bottom">
         <p>
           ${data.text}
         </p>
       </div>`
-      bottom_html += text_html;
+      html += text_html;
+    } else {
+      html += "<br />"
     }
     if(data.image.url) {
-      var image_html = `<image src="${data.image.url}">`
-      bottom_html += image_html
+      var image_html =
+      `<div class="image">
+        <image src="${data.image.url}">
+       </div>`
+      html += image_html
     }
-    return bottom_html
+    message = $("<div class='message'>").append(html)
+    return message
   }
   $("#new_message").on("submit",function(e){
     e.preventDefault();
@@ -44,17 +44,15 @@ $(document).on('ready page:load' , function() {
       contentType: false
     })
     .done(function(data){
-      var html = buildHTMLtop(data);
-      var bottom_html = buildHTMLbottom(data);
-      $('.right__middle').append(html);
-      $('.message:last-child').append(bottom_html);
+      var html = buildHTML(data);
+      $('.right__middle').append(message);
       $('#message_text').val('');
       $('.pic-button').val('');
       var position = $('.right__middle').find($(".message:last-child")).get(0).offsetTop
       $(".right__middle").not(":animated").animate({scrollTop:position});
     })
     .fail(function(){
-      window.alert('テキストが入力されていません');
+      window.alert('テキストを入力するか、画像ファイルを選んでください。');
     })
     return false;
   });
