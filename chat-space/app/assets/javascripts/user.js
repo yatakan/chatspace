@@ -22,7 +22,6 @@ $(document).on ('turbolinks:load', function(){
     input = $("#user-search-field").val();
 
     if(word!==input&&input.length!==0){
-      console.log('IF文')
       $.ajax({
         type: 'GET',
         url: '/users',
@@ -33,18 +32,15 @@ $(document).on ('turbolinks:load', function(){
         $("#user-search-result").empty();
         $("#user-adding").empty();
         if (users.length !== 0) {
-          console.log('成功');
           users.forEach(function(users){
           appendUsers(users)
           });
-        } else {
-          console.log('一致しないパターン');
         }
       })
       .fail(function(){
-        console.log('通信に失敗');
+        alert('通信に失敗しました。');
       })
     }
     word = input
-  }) //keyup
-}); //ハッカ葉
+  })
+});
