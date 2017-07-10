@@ -1,4 +1,4 @@
-$(function(){
+$(document).on ('turbolinks:load', function(){
   function buildHTML(data){
     var html =
       `<div class="message__top">
@@ -9,7 +9,6 @@ $(function(){
             ${data.date}
           </p>
         </div>`
-    var bottom_html = ""
     if(data.text){
       var text_html =
       `<div class="message__bottom">
