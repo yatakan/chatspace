@@ -15,7 +15,6 @@ $(document).on('turbolinks:load', function(){
 
     if(word!==input){
       $("#user-search-result").empty();
-      $("#user-adding").empty();
       if(input.length!==0){
         $.ajax({
           type: 'GET',
