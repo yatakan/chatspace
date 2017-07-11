@@ -27,7 +27,7 @@ $(document).on ('turbolinks:load', function(){
        </div>`
       html += image_html
     }
-    message = $("<div class='message'>").append(html)
+    message = $(`<div class='message' data-message-id="${data.id}">`).append(html)
     return message
   }
   $("#new_message").on("submit",function(e){

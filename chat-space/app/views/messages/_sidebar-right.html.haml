@@ -10,7 +10,7 @@
           %li= user.name
   .right__middle
     -@messages.each do |message|
-      .message
+      .message{"data-message-id":"#{message.id}"}
         .message__top
           %h1= message.user.name
           %p.date= message.date_time
