@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  var word
+  var word = '';
 
   function appendUsers(user) {
     var html =
@@ -13,26 +13,28 @@ $(document).on('turbolinks:load', function(){
   $("#user-search-field").on("keyup",function(){
     input = $("#user-search-field").val();
 
-    if(word!==input&&input.length!==0){
-      $.ajax({
-        type: 'GET',
-        url: '/users',
-        data: { keyword: input },
-        dataType: 'json'
-      })
-      .done(function(users) {
-        $("#user-search-result").empty();
-        $("#user-adding").empty();
-        if (users.length !== 0) {
-          users.forEach(function(users){
-          appendUsers(users)
-          });
-        }
-      })
-      .fail(function(){
-        alert('通信に失敗しました。');
-      })
+    if(word!==input){
+      $("#user-search-result").empty();
+      $("#user-adding").empty();
+      if(input.length!==0){
+        $.ajax({
+          type: 'GET',
+          url: '/users',
+          data: { keyword: input },
+          dataType: 'json'
+        })
+        .done(function(users) {
+          if (users.length !== 0) {
+            users.forEach(function(users){
+            appendUsers(users);
+            });
+          }
+        })
+        .fail(function(){
+          alert('通信に失敗しました。');
+        })
+      }
+      word = input;
     }
-    word = input
   })
 });
