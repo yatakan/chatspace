@@ -12,6 +12,15 @@ $(document).on('turbolinks:load', function(){
 
   $("#user-search-field").on("keyup",function(){
     input = $("#user-search-field").val();
+    var add_user_ids = []
+    if ($(".chat-group-user").length!==0){
+    add_user_ids.push(($(".chat-group-user")).attr($('user-id')));
+    console.log(add_user_ids)
+    }
+
+    // for(var i = 0; i > $("#user-adding").find(".user-search-remove").length; i++){
+    //   console.log('よばれてる？')
+    // }
 
     if(word!==input){
       $("#user-search-result").empty();
