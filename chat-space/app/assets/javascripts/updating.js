@@ -37,7 +37,6 @@ $(document).on('turbolinks:load', function() {
         dataType: 'json'
       })
       .done(function(json) {
-        console.log('テストテストテストテストテストテスト成功')
           json.messages.forEach(function(message){
             var last_message_id = $('.right__middle').find($(".message:last-child")).attr('data-message-id');
             if(last_message_id < message.id){
@@ -49,7 +48,7 @@ $(document).on('turbolinks:load', function() {
         $(".right__middle").not(":animated").animate({scrollTop:position});
       })
       .fail(function(data) {
-        window.alert('テストテストテストテストテストテスト通信失敗')
+        window.alert('自動更新失敗');
       });
     } else {
       clearInterval(interval);
