@@ -10,14 +10,6 @@ $(document).on('turbolinks:load', function(){
   $("#user-search-result").append(html);
   }
 
-  function appendNoUsers(text) {
-   var html =
-      `<li>
-        ${text}
-      </li>`
-  $("#user-search-result").append(html);
-  }
-
   $("#user-search-field").on("keyup",function(){
     input = $("#user-search-field").val();
 
