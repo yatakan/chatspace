@@ -32,7 +32,7 @@ describe MessagesController, type: :controller do
       it "is assings pl @groups has current_user.groups" do
         groups = create_list(:group, 3)
         groups.each do |g|
-          g.groups_users.create(user: user)
+          g.groups_user.create(user: user)
         end
         get :index, params: { group_id: groups.first.id }
         groups = user.groups

@@ -3,6 +3,7 @@ class Message < ApplicationRecord
   belongs_to :group
   validates :text, presence: true, unless:"image?"
   validates :group_id, :user_id, presence: true
+  validates :user, presence: true
   mount_uploader :image, ImageUploader
 
   def date_time
